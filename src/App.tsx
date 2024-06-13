@@ -1,10 +1,13 @@
 import React from 'react';
-import './App.css';
+import { CardInfo } from './components/CardInfo/CardInfo'
+import { useSelector } from 'react-redux'
+import { RootState } from './store/store'
 
 function App() {
+  const state = useSelector((state: RootState) => state.cardSlice);
   return (
     <div className="App">
-      card-info
+     <CardInfo info={state}/>
     </div>
   );
 }
